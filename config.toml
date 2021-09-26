@@ -46,38 +46,29 @@ feed_filename = "atom.xml"
 # files are always copied, regardless of this setting.
 hard_link_static = false
 
-# The taxonomies to be rendered for the site and their configuration.
+# The taxonomies to be rendered for the site and their configuration of the default languages
 # Example:
 #     taxonomies = [
 #       {name = "tags", feed = true}, # each tag will have its own feed
-#       {name = "tags", lang = "fr"}, # you can have taxonomies with the same name in multiple languages
+#       {name = "tags"}, # you can have taxonomies with the same name in multiple languages
 #       {name = "categories", paginate_by = 5},  # 5 items per page for a term
 #       {name = "authors"}, # Basic definition: no feed or pagination
 #     ]
 #
 taxonomies = []
 
-# The additional languages for the site.
-# Example:
-#     languages = [
-#       {code = "fr", feed = true}, # there will be a feed for French content
-#       {code = "fr", search = true}, # there will be a Search Index for French content
-#       {code = "it"}, # there won't be a feed for Italian content
-#     ]
-#
-languages = []
-
-# A list of directories used to search for additional `.sublime-syntax` files.
-extra_syntaxes = []
-
 # When set to "true", a search index is built from the pages and section
 # content for `default_language`.
 build_search_index = true
+
 
 # Configuration of the Markdown rendering
 [markdown]
 # When set to "true", all code blocks are highlighted.
 highlight_code = true
+
+# A list of directories used to search for additional `.sublime-syntax` files.
+extra_syntaxes = []
 
 # The theme to use for code highlighting.
 # See below for list of allowed values.
@@ -101,17 +92,17 @@ external_links_no_referrer = false
 # For example, `...` into `…`, `"quote"` into `“curly”` etc
 smart_punctuation = false
 
+
 # Configuration of the link checker.
 [link_checker]
 # Skip link checking for external URLs that start with these prefixes
 skip_prefixes = [
-    "http://[2001:db8::]/",
 ]
 
 # Skip anchor checking for external URLs that start with these prefixes
 skip_anchor_prefixes = [
-    "https://caniuse.com/",
 ]
+
 
 # Various slugification strategies, see below for details
 # Defaults to everything being a slug
@@ -120,30 +111,47 @@ paths = "on"
 taxonomies = "on"
 anchors = "on"
 
+
 [search]
 # Whether to include the title of the page/section in the index
 include_title = true
 # Whether to include the description of the page/section in the index
 include_description = false
+# Whether to include the path of the page/section in the index
+include_path = false
 # Whether to include the rendered content of the page/section in the index
 include_content = true
 # At which character to truncate the content to. Useful if you have a lot of pages and the index would
 # become too big to load on the site. Defaults to not being set.
 # truncate_content_length = 100
 
-# Optional translation object. Keys should be language codes.
-# Optional translation object. The key if present should be a language code.
+
+# Optional translation object for the default language
 # Example:
 #     default_language = "fr"
 #
 #     [translations]
-#     [translations.fr]
 #     title = "Un titre"
 #
-#     [translations.en]
-#     title = "A title"
-#
 [translations]
+
+
+
+# Additional languages definition
+# You can define language specific config values and translations: 
+# title, description, generate_feed, feed_filename, taxonomies, build_search_index
+# as well as its own search configuration and translations (see above for details on those)
+[languages]
+# For example
+# [languages.fr]
+# title = "Mon blog"
+# generate_feed = true
+# taxonomies = [
+#    {name = "auteurs"},
+#    {name = "tags"},
+# ]
+# build_search_index = false
+
 
 # You can put any kind of data here. The data
 # will be accessible in all templates
@@ -169,6 +177,7 @@ links = [
 [extra.author]
 # For Hallo theme: https://www.getzola.org/themes/hallo/
 name = "Rachel" # for hallo theme
+
 
 [extra.theme]
 # For Hallo theme: https://www.getzola.org/themes/hallo/

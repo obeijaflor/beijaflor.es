@@ -61,6 +61,6 @@ env:
   DEST_DIR: /var/www/html
   # ssh_known_hosts file
   SSH_KNOWN_HOSTS: |-
-    links.beijaflor.es ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINDfUkAEyCUspXbGcu+r6xhRZRpURYQH4IrsGUZipflz
+    beijaflor.es ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINDfUkAEyCUspXbGcu+r6xhRZRpURYQH4IrsGUZipflz
 
 #  vim: set ts=4 sw=2 tw=88 et :
