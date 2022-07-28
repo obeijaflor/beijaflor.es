@@ -170,7 +170,6 @@ iam = "I'm"
 links = [
     { title = "Résumé", url = "files/resume.pdf", iconset = "fas", icon = "file" },
     { title = "GitHub", url = "https://github.com/obeijaflor", iconset = "fab", icon = "github" },
-    { title = "GitLab", url = "https://gitlab.com/beija-flor", iconset = "fab", icon = "gitlab" }
 ]
 
 
